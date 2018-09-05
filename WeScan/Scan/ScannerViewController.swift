@@ -58,6 +58,13 @@ final class ScannerViewController: UIViewController {
         quadView.removeQuadrilateral()
         captureSessionManager?.start()
         UIApplication.shared.isIdleTimerDisabled = true
+        
+        AVCaptureConnection *previewLayerConnection= videoPreviewlayer.connection;
+
+        if ([previewLayerConnection isVideoOrientationSupported])
+         {
+             [previewLayerConnection setVideoOrientation:[[UIApplication sharedApplication] statusBarOrientation]]; 
+         }
     }
     
     override func viewDidLayoutSubviews() {
