@@ -59,12 +59,12 @@ final class ScannerViewController: UIViewController {
         captureSessionManager?.start()
         UIApplication.shared.isIdleTimerDisabled = true
         
-        AVCaptureConnection *previewLayerConnection= videoPreviewlayer.connection;
-
-        if ([previewLayerConnection isVideoOrientationSupported])
+        
+        if let previewLayerConnection = videoPreviewlayer.connection, previewLayerConnection.isVideoOrientationSupported
          {
-             [previewLayerConnection setVideoOrientation:[[UIApplication sharedApplication] statusBarOrientation]]; 
+             previewLayerConnection.videoOrientation = AVCaptureVideoOrientation.landscapeLeft
          }
+        
     }
     
     override func viewDidLayoutSubviews() {
