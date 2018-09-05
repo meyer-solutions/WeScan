@@ -127,7 +127,7 @@ final class CaptureSessionManager: NSObject, AVCaptureVideoDataOutputSampleBuffe
         photoSettings.isAutoStillImageStabilizationEnabled = true
         
         if let photoOutputConnection = self.photoOutput.connection(with: .video) {
-           photoOutputConnection.videoOrientation = AVCaptureVideoOrientation(interfaceOrientation: UIApplication.shared.statusBarOrientation) ?? AVCaptureVideoOrientation.landscapeLeft
+            photoOutputConnection.videoOrientation = AVCaptureVideoOrientation(interfaceOrientation: UIApplication.shared.statusBarOrientation) ?? AVCaptureVideoOrientation.landscapeLeft
         }
         
        photoOutput.capturePhoto(with: photoSettings, delegate: self)

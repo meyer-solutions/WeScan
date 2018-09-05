@@ -31,6 +31,7 @@ extension AVCaptureVideoOrientation {
         }
     }
     
+    /// Maps UIInterfaceOrientation to AVCaptureVideoOrientation
     init?(interfaceOrientation: UIInterfaceOrientation) {
         switch interfaceOrientation {
         case .portrait:
